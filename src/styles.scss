@@ -6,42 +6,31 @@
     
 }
 
-@font-face {
-    font-display: swap;
-    font-family: "Baloo 2";
-    font-style: normal;
-    font-weight: 200;
-    src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2")
-}
+// Entferne alle bestehenden @font-face Regeln und ersetze sie durch:
 
-@font-face {
-  font-display: swap; 
-  font-family: 'Baloo 2';
-  font-style: normal;
-  font-weight: 100;
-  src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2") 
-}
-
+/* baloo-2-regular - latin */
 @font-face {
   font-display: swap;
   font-family: 'Baloo 2';
   font-style: normal;
-  font-weight: 100;
-src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2") 
+  font-weight: 400;
+  src: url('/assets/font/baloo-2-v22-latin-regular.woff2') format('woff2');
 }
 
+/* baloo-2-500 - latin */
 @font-face {
-  font-display: swap; 
+  font-display: swap;
   font-family: 'Baloo 2';
   font-style: normal;
-  font-weight: 100;
-  src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2")
+  font-weight: 500;
+  src: url('/assets/font/baloo-2-v22-latin-500.woff2') format('woff2');
 }
-/* baloo-2-700 - latin */
+
+/* baloo-2-600 - latin */
 @font-face {
-  font-display: swap; 
+  font-display: swap;
   font-family: 'Baloo 2';
   font-style: normal;
-  font-weight: 100;
- src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2") 
+  font-weight: 600;
+  src: url('/assets/font/baloo-2-v22-latin-600.woff2') format('woff2');
 }
