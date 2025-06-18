@@ -1,0 +1,57 @@
+section {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: "Baloo 2";
+
+  #content {
+    max-width: 1920px;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-image: url("/assets/images/Ellipse 5.png"),
+      url("/assets/images/Ellipse 6.png");
+    background-size: 12%, 5%;
+    background-position: center -18%, bottom 5% right;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+
+    #headline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 40px;
+
+      h1 {
+        color: #5988ff;
+        margin-bottom: 2%;
+        white-space: nowrap;
+        line-height: 1;
+        font-size: 100px;
+      }
+    }
+
+   
+  }
+
+  #right-content {
+    display: flex;
+    justify-content: flex-end;
+
+    #text-content {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 2%;
+
+      span {
+        font-size: 30px;
+      }
+    }
+  }
+}
