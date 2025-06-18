@@ -8,6 +8,8 @@ section {
   overflow: hidden;
   display: flex;
   font-family: "Baloo 2";
+  background-color: rgb(237, 242, 255);
+  
 
   img {
     width: 750px;
@@ -28,11 +30,15 @@ section {
     align-items: center;
     position: relative;
     width: 50%;
-    p {
-      font-size: 50px;
+
+    
+    #hallo{
+      font-family: Montserrat;
+      font-size: 40px;
     }
 
     #scroll {
+      font-family: Montserrat;
       font-size: 30px;
       margin-top: 60px;
       animation: pulsate 0.5s infinite alternate;
