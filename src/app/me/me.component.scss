@@ -7,8 +7,7 @@ section {
   max-height: 1440px;
   overflow: hidden;
   display: flex;
-   font-family: "Baloo 2";
-   
+  font-family: "Baloo 2";
 
   img {
     width: 750px;
@@ -30,15 +29,35 @@ section {
     position: relative;
     width: 50%;
     p {
-        font-size: 50px;
+      font-size: 50px;
+    }
+
+    #scroll {
+      font-size: 30px;
+      margin-top: 60px;
+      animation: pulsate 0.5s infinite alternate;
+      @keyframes pulsate {
+        0% {
+          font-size: 30px; 
+        }
+        100% {
+          font-size: 35px;
+        }
+      }
     
     }
     h1 {
-        font-size: 60px;
-        position: relative;
-        margin: 0;
-        line-height: 1;
+      font-size: 60px;
+      position: relative;
+      margin: 0;
+      line-height: 1;
     }
+
+      #scroll-line{
+        width: 2px;
+        height: 4000px;
+        background-color: #5988ff;
+      }
   }
   #frontend {
     display: flex;
@@ -46,8 +65,24 @@ section {
     align-items: center;
     gap: 0;
     #top {
-        font-size: 80px;
+      font-size: 80px;
     }
   }
-  
+
+  #icons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 7%;
+    bottom: 0;
+
+    img {
+      width: 40px;
+      height: 40px;
+      &:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s;
+      }
+    }
+  }
 }
