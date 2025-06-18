@@ -6,7 +6,7 @@
     
 }
 
-// Entferne alle bestehenden @font-face Regeln und ersetze sie durch:
+
 
 /* baloo-2-regular - latin */
 @font-face {
@@ -14,7 +14,7 @@
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/font/baloo-2-v22-latin-regular.woff2') format('woff2');
+  src: url('/assets/fonts/baloo-2-v22-latin-500.woff2') format('woff2');
 }
 
 /* baloo-2-500 - latin */
@@ -23,7 +23,7 @@
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 500;
-  src: url('/assets/font/baloo-2-v22-latin-500.woff2') format('woff2');
+  src: url('/assets/fonts/baloo-2-v22-latin-500.woff2') format('woff2');
 }
 
 /* baloo-2-600 - latin */
@@ -32,5 +32,21 @@
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 600;
-  src: url('/assets/font/baloo-2-v22-latin-600.woff2') format('woff2');
+  src: url('/assets/fonts/baloo-2-v22-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/baloo-2-v22-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/montserrat-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

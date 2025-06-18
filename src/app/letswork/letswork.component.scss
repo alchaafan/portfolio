@@ -35,8 +35,6 @@ section {
         font-size: 100px;
       }
     }
-
-   
   }
 
   #right-content {
@@ -50,7 +48,33 @@ section {
       margin-top: 2%;
 
       span {
-        font-size: 30px;
+        color: #000;
+        font-family: "Montserrat";
+        margin-bottom: 2%;
+        font-weight: 400;
+        font-size: 19px;
+      }
+
+      #text-button {
+        color: #5988ff;
+        border-color: #5988ff;
+        background-color: #fff;
+
+        &:hover {
+          background: linear-gradient(to right, #0043f0, #5988ff);
+          color: #fff;
+          border-color: none;
+        }
+      }
+
+      button {
+        padding: 10px 20px;
+        border: solid 2px;
+        border-radius: 10px;
+        cursor: pointer;
+        white-space: nowrap;
+        font-size: 23px;
+        margin-top: 15px;
       }
     }
   }
