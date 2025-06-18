@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth
+    
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Baloo 2";
+    font-style: normal;
+    font-weight: 200;
+    src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2")
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2") 
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 100;
+src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2") 
+}
+
+@font-face {
+  font-display: swap; 
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2")
+}
+/* baloo-2-700 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 100;
+ src: url("/assets/font/baloo-2-v22-latin-500.woff2") format("woff2") 
+}
