@@ -4,10 +4,11 @@ import { HeaderComponent } from "./header/header.component";
 import { MeComponent } from "./me/me.component";
 import { LetsworkComponent } from "./letswork/letswork.component";
 import { SkillsComponent } from "./skills/skills.component";
+import { MyworkComponent } from "./mywork/mywork.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, MeComponent, LetsworkComponent, SkillsComponent],
+  imports: [RouterOutlet, HeaderComponent, MeComponent, LetsworkComponent, SkillsComponent, MyworkComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
