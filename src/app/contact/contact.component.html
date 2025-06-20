@@ -23,9 +23,19 @@
             <div id="right-content">
                 <input type="text" name="name" id="name" required placeholder="Your name">
 
-                <input type = "email" name="email" type="email" required="" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="Your email">
+                <input type="email" name="email" type="email" required=""
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="Your email">
 
                 <textarea name="message" id="message" required minlength="5" placeholder="Your message"></textarea>
+
+                <div id="checkbox">
+                    <input type="checkbox" name="privacy">
+
+                    <label for="privacy"> I have read the privacy-policy and agree to the processing of my data.</label>
+
+                </div>
+
+                <button type="submit" id="send-button">say hello :)</button>
 
             </div>
         </div>

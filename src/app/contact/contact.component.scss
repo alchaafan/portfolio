@@ -17,10 +17,9 @@ section {
     }
 
     #main {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
 
       #left-content {
         width: 45%;
@@ -39,12 +38,83 @@ section {
         span {
           color: #5988ff;
           font-family: Montserrat;
-           font-size: 26px;
+          font-size: 26px;
         }
         h3 {
-            color: #5988ff;
+          color: #5988ff;
           font-family: Montserrat;
-          
+        }
+      }
+
+      #right-content {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+
+        input {
+          font-family: Montserrat;
+          border: 1px solid #5988ff;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom: 30px;
+          color: #000;
+          outline: none;
+          background-color: #f2f5fd;
+          width: 80%;
+        }
+
+        textarea {
+          font-family: Montserrat;
+          border: 1px solid #5988ff;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom: 30px;
+          color: #000;
+          outline: none;
+          background-color: #f2f5fd;
+          height: 100px;
+          width: 80%;
+        }
+
+        #checkbox {
+          display: flex;
+          align-items: center;
+          margin-bottom: 30px;
+          width: 100%;
+
+          input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            margin-bottom: 0;
+            width: 15px;
+            height: 15px;
+          }
+          label {
+            margin-right: 0;
+            color: #000;
+            font-family: Montserrat;
+            width: auto;
+          }
+        }
+
+        button {
+          color: #5988ff;
+          border-color: #5988ff;
+          background-color: #fff;
+          padding: 10px 20px;
+          border: solid 2px;
+          border-radius: 10px;
+          cursor: pointer;
+          white-space: nowrap;
+          margin-top: 10px;
+          font-size: 23px;
+          width: 80%;
+
+          &:hover {
+            background: linear-gradient(to right, #0043f0, #5988ff);
+            color: #fff;
+            border-color: none;
+          }
         }
       }
     }
