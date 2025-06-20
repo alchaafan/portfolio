@@ -6,9 +6,11 @@ import { LetsworkComponent } from "./letswork/letswork.component";
 import { SkillsComponent } from "./skills/skills.component";
 import { MyworkComponent } from "./mywork/mywork.component";
 
+import { ContactComponent } from "./contact/contact.component";
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, MeComponent, LetsworkComponent, SkillsComponent, MyworkComponent],
+  imports: [RouterOutlet, HeaderComponent, MeComponent, LetsworkComponent, SkillsComponent, MyworkComponent, ContactComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

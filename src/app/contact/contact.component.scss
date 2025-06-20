@@ -1,0 +1,52 @@
+section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  #content {
+    max-width: 1920px;
+    width: 100%;
+    margin: 5% 8%;
+
+    #header {
+      h1 {
+        font-family: "Baloo 2";
+        font-size: 5.625rem;
+        color: #5988ff;
+      }
+    }
+
+    #main {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+
+      #left-content {
+        width: 45%;
+        margin-right: 15%;
+
+        h2 {
+          color: #5988ff;
+          font-family: Montserrat;
+          font-size: 2rem;
+        }
+
+        p {
+          font-family: Montserrat;
+          font-size: 20px;
+        }
+        span {
+          color: #5988ff;
+          font-family: Montserrat;
+           font-size: 26px;
+        }
+        h3 {
+            color: #5988ff;
+          font-family: Montserrat;
+          
+        }
+      }
+    }
+  }
+}
