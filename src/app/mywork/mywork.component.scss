@@ -70,21 +70,36 @@ section {
           display: flex;
           justify-content: space-evenly;
 
-
           button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             border: solid 2px;
             border-radius: 10px;
             white-space: nowrap;
             cursor: pointer;
             margin-top: 10px;
-           
-
+            font-size: 16px;
           }
           .test-button {
             background: linear-gradient(to right, #0043f0, #5988ff);
             color: #fff;
             border-color: #5988ff;
+
+            &:hover {
+              color: #5988ff;
+              background: none;
+            }
+          }
+
+          .github-button {
+            color: #5988ff;
+            border-color: #5988ff;
+            background-color: #fff;
+
+            &:hover {
+              background: linear-gradient(to right, #0043f0, #5988ff);
+              color: #fff;
+              border-color: none;
+            }
           }
         }
       }
