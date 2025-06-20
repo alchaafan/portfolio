@@ -12,6 +12,8 @@ section {
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
+    
+
   }
 
   .ellipse5 {
@@ -27,17 +29,18 @@ section {
     background-image: url("/assets/images/blue2.png");
     width: 5%;
     aspect-ratio: 1/1;
-    bottom: 60%;
+    bottom: 50%;
     right: 50%;
+    transform: translateX(550%);
   }
 
     .ellipse7 {
     background-image: url("/assets/images/blue3.png");
-    width: 10%;
+    width: 30%;
     aspect-ratio: 1/1;
-    top: 0%;
+    top: 27%;
     left: 4%;
-    transform: translateX(-50%);
+    transform: translateX(-20%);
   }
 
   .ellipse8 {
@@ -45,19 +48,32 @@ section {
     width: 5%;
     aspect-ratio: 1/1;
     bottom: 60%;
+    right: 0%;
+    transform: translateX(50%);
+  }
+
+  .ellipse8 {
+    background-image: url("/assets/images/blue5.png");
+    width: 20%;
+    aspect-ratio: 1/1;
+    bottom: 60%;
     right: 20%;
+    transform: translateX(130%);
   }
   #content {
     max-width: 1920px;
     margin-right: 8%;
     margin-left: 8%;
     margin-bottom: 5%;
+    z-index: 10;
 
     #headline {
+     
       display: flex;
       flex-direction: column;
       width: 50%;
       h1 {
+        
         color: #5988ff;
         margin-bottom: 2%;
         white-space: nowrap;
