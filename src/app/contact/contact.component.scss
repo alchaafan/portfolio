@@ -116,6 +116,19 @@ section {
             border-color: none;
           }
         }
+        #arrow-top {
+          margin-top: 50px;
+          width: 30px;
+          height: 30px;
+          transition: transform .2s ease;
+
+          &:hover {
+            content: url("/assets/images/arrow-hover.png");
+            transform: scale(1.1);
+            transition: transform .2s ease;
+            cursor: pointer;
+          }
+        }
       }
     }
   }
