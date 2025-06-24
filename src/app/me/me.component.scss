@@ -78,9 +78,8 @@ section {
   #icons {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 7%;
-    bottom: 0;
+    justify-content: flex-end;
+    margin-right: 10%;
 
     img {
       width: 40px;
