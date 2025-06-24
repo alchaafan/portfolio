@@ -71,11 +71,19 @@ section {
       }
 
       #right-content {
+
+        .warning {
+          color: red;
+           font-family: Montserrat;
+           font-size: 16px;
+           margin-top: -25px;
+           margin-bottom: 15px;
+        }
         display: flex;
         flex-direction: column;
         width: 60%;
 
-        input {
+        input[type=text], [type=email] {
           font-family: Montserrat;
           border: 1px solid #5988ff;
           border-radius: 10px;

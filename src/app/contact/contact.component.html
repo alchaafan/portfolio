@@ -25,23 +25,41 @@
             </div>
 
             <div id="right-content">
-                <input type="text" name="name" id="name" required placeholder="Your name">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    
+                    <input [(ngModel)]="contactData.name" type="text" name="name" id="name"
+                        placeholder="Your name">
+                        @if (formErrors.name) {
+                            <p class="warning">{{formErrors.name}}</p>
+                        }
 
-                <input type="email" name="email" type="email" required=""
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="Your email">
+                    <input [(ngModel)]="contactData.email" type="email" name="email" type="email" required=""
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="Your email">
+                        @if (formErrors.email) {
+                            <p class="warning">{{formErrors.email}}</p>
+                        }
 
-                <textarea name="message" id="message" required minlength="5" placeholder="Your message"></textarea>
+                    <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message" required
+                        minlength="5" placeholder="Your message" ></textarea>
+                        @if(formErrors.message) {
+                            <p class="warning">{{formErrors.message}}</p>
+                        }
+                    
 
-                <div id="checkbox">
-                    <input type="checkbox" name="privacy">
+                    <div id="checkbox">
+                        <input type="checkbox" name="privacy" [(ngModel)]="contactData.privacy">
 
-                    <label for="privacy"> I have read the privacy-policy and agree to the processing of my data.</label>
+                        <label> I have read the privacy-policy and agree to the processing of my data.</label>
 
-                </div>
+                    </div>
+                    @if(formErrors.privacy) {
+                        <p class="warning">{{formErrors.privacy}}</p>
+                    }
 
-                <button type="submit" id="send-button">say hello :)</button>
+                    <button type="submit" id="send-button">say hello :)</button>
 
-                <a href="me"> <img id="arrow-top" src="/assets/images/arrow-top.png" alt=""></a>
+                    <a href="me"> <img id="arrow-top" src="/assets/images/arrow-top.png" alt=""></a>
+                </form>
             </div>
 
         </div>

@@ -7,38 +7,11 @@
         <div id="icons-container">
 
 
-            <div class="icons">
-                <img src="/assets/images/Frame 6.png" alt="">
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Frame 7.png" alt="">
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Frame 8.png" alt="">
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Frame 9.png" alt="">
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Frame 10.png" alt="">
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Frame 11.png" alt="">
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Frame 12.png" alt="">
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Frame 13.png" alt="">
-            </div>
-
-            <div class="icons">
-                <img src="/assets/images/Frame 18.png" alt="">
-
-            </div>
-            <div class="icons">
-                <img src="/assets/images/Icon + Name s2.png" alt="">
-            </div>
+            @for (skill of skills; track $index) {
+                <div class="icons">
+                    <img [src]= "skill">
+                </div>
+            }
 
 
         </div>
