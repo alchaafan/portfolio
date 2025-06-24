@@ -71,19 +71,30 @@ section {
       }
 
       #right-content {
+        .privacy-link {
+          color: #5988ff;
+          text-decoration: underline;
+          cursor: pointer;
+
+          &:hover {
+            color: #0043f0;
+            text-decoration: none;
+          }
+        }
 
         .warning {
           color: red;
-           font-family: Montserrat;
-           font-size: 16px;
-           margin-top: -25px;
-           margin-bottom: 15px;
+          font-family: Montserrat;
+          font-size: 16px;
+          margin-top: -25px;
+          margin-bottom: 15px;
         }
         display: flex;
         flex-direction: column;
         width: 60%;
 
-        input[type=text], [type=email] {
+        input[type="text"],
+        [type="email"] {
           font-family: Montserrat;
           border: 1px solid #5988ff;
           border-radius: 10px;
@@ -141,6 +152,18 @@ section {
           margin-top: 10px;
           font-size: 23px;
           width: 80%;
+
+          &:disabled {
+            background-color: rgb(199, 185, 185);
+            color: #000;
+            opacity: 0.5;
+            cursor: not-allowed;
+
+            &:hover {
+              background-color: #fff;
+              color: #5988ff;
+            }
+          }
 
           &:hover {
             background: linear-gradient(to right, #0043f0, #5988ff);

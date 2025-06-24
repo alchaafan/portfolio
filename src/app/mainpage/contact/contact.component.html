@@ -49,14 +49,14 @@
                     <div id="checkbox">
                         <input type="checkbox" name="privacy" [(ngModel)]="contactData.privacy">
 
-                        <label> I have read the privacy-policy and agree to the processing of my data.</label>
+                        <label> I have read the  <a routerLink="/privacy" class="privacy-link">privacy-policy</a> and agree to the processing of my data. </label>
 
                     </div>
                     @if(formErrors.privacy) {
                         <p class="warning">{{formErrors.privacy}}</p>
                     }
 
-                    <button type="submit" id="send-button">say hello :)</button>
+                    <button type="submit" id="send-button" [disabled]="!isFormValid()">say hello :)</button>
 
                     <a href="me"> <img id="arrow-top" src="/assets/images/arrow-top.png" alt=""></a>
                 </form>
