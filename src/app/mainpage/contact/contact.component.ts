@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule, RouterModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+
+   constructor(private translate: TranslateService) {}
+  changeLanguage(language: string) {
+    this.translate.use(language);
+  }
+
+  
   contactData = {
     name: '',
     email: '',
