@@ -1,19 +1,12 @@
-<header id="header">
-
+<header>
     <div id="meinName">
         <img src="/assets/images/logo.png" alt="">
     </div>
     <div id="navBar">
-        <a href="">About me</a>
-        <a href="">Skills</a>
-        <a href="">Prjects</a>
-        <a href=""> DE | EN</a>
-        
-
+        <a href="">{{ 'header.ABOUT_ME' | translate }}</a>
+        <a href="">{{ 'header.SKILLS' | translate }}</a>
+        <a href="">{{ 'header.MY_WORK' | translate }}</a>
+        <button (click)="changeLanguage('de')">{{ 'header.LANGUAGE_DE' | translate }}</button>
+        <button (click)="changeLanguage('en')">{{ 'header.LANGUAGE_EN' | translate }}</button>
     </div>
-
-       
-   
-
-
 </header>
