@@ -15,12 +15,21 @@ section {
     margin-left: 20%;
     margin-right: 20%;
 
+    @media (max-width: 900px) {
+      margin-left: 3%;
+      margin-left: 3%;
+    }
+
     h1 {
       font-family: "Baloo 2";
       font-weight: 800;
       font-size: 6rem;
       color: #fff;
       margin-bottom: 2%;
+
+      @media(max-width:900px) {
+        font-size: 50px;
+      }
     }
 
     #icons-container {
@@ -28,16 +37,29 @@ section {
       flex-wrap: wrap;
       justify-content: center;
 
+       @media(max-width:900px) {
+            display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+
       .icons {
         width: 160px;
-        transition: transform 0.3s ease; 
+        transition: transform 0.3s ease;
         img {
-           
-            height: auto;
-            transition: inherit;
+          height: auto;
+          transition: inherit;
+
+          @media (max-width: 900px) {
+            width: 60px;
+          }
         }
         &:hover {
-            transform: scale(1.1);
+          transform: scale(1.1);
+        }
+
+        @media (max-width: 900px) {
+          width: auto;
         }
       }
     }
