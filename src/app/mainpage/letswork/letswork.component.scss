@@ -21,6 +21,10 @@ section {
     top: -10%;
     left: 50%;
     transform: translateX(-50%);
+
+    @media(max-width:1000px) {
+      display: none;
+    }
   }
 
   .ellipse6 {
@@ -29,9 +33,12 @@ section {
     aspect-ratio: 1/1;
     bottom: 60%;
     right: 20%;
+
+    @media (max-width: 1480px) {
+      top: 10px;
+      right: 10px;
+    }
   }
-
-
 
   #content {
     max-width: 1920px;
@@ -42,6 +49,12 @@ section {
 
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     #headline {
       display: flex;
@@ -56,6 +69,10 @@ section {
         white-space: nowrap;
         line-height: 1;
         font-size: 100px;
+
+        @media (max-width: 1200px) {
+          font-size: 50px;
+        }
       }
     }
   }
@@ -64,11 +81,22 @@ section {
     display: flex;
     justify-content: flex-end;
 
+    @media(max-width:1200px) {
+     
+    }
+
     #text-content {
       width: 60%;
       display: flex;
       flex-direction: column;
       margin-top: 20%;
+
+      @media (max-width: 1200px) {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
       span {
         color: #000;
@@ -76,6 +104,10 @@ section {
         margin-bottom: 2%;
         font-weight: 400;
         font-size: 19px;
+
+        @media (max-width: 1200px) {
+          font-size: 17px;
+        }
       }
 
       #text-button {
