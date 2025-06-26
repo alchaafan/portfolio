@@ -59,4 +59,6 @@ export class ContactComponent {
       console.log(this.contactData);
     }
   }
+
+  
 }

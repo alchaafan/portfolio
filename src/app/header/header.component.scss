@@ -2,7 +2,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-font-family: Montserrat;
+  font-family: Montserrat;
   color: #5988ff;
   width: 100%;
   height: 100px;
@@ -15,7 +15,6 @@ font-family: Montserrat;
     margin-right: 8%;
 
     a {
-       
       display: inline-block;
       position: relative;
       text-decoration: none;
@@ -24,9 +23,8 @@ font-family: Montserrat;
       font-size: 24px;
       overflow: hidden;
       transition: color 0.3s ease;
-      padding-bottom: 5px; 
-     
-    
+      padding-bottom: 5px;
+      cursor: pointer;
 
       &::after {
         content: "";
@@ -56,23 +54,84 @@ font-family: Montserrat;
 
     img {
       height: 100px;
+      cursor: pointer;
     }
   }
 
   .language-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  
-  a {
-    position: relative;
-    padding: 5px 10px;
-    
-    &:hover {
-      &::after {
-        transform: translateX(-50%) scaleX(1);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    a {
+      position: relative;
+      padding: 5px 10px;
+
+      &:hover {
+        &::after {
+          transform: translateX(-50%) scaleX(1);
+        }
       }
     }
   }
 }
+
+#responsive-menu {
+  display: none;
+
+  img {
+    width: 35px;
+    cursor: pointer;
+  }
+}
+
+#hamburger-menu {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffffff, #eaf0ff);
+  z-index: 10;
+  padding-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+ 
+  a {
+    font-family: "Montserrat";
+    padding: 10px;
+    font-size: 1.4375rem;
+    color: #5988ff;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  #translate-div {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 787px) {
+  #navBar {
+    display: none;
+  }
+  #responsive-menu {
+    display: block;
+  }
+}
+@media (max-height: 620px) and (orientation: landscape) {
+  #hamburger-menu {
+    padding: 0px;
+  }
 }

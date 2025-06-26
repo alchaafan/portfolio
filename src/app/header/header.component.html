@@ -1,13 +1,41 @@
 <header>
     <div id="meinName">
-        <img src="/assets/images/logo.png" alt="">
+       <a href="/"> <img src="/assets/images/logo.png" alt=""></a>
     </div>
     <div id="navBar">
-        <a href="">{{ 'header.ABOUT_ME' | translate }}</a>
-        <a href="">{{ 'header.SKILLS' | translate }}</a>
-        <a href="">{{ 'header.MY_WORK' | translate }}</a>
+        <a href="#letswork">{{ 'header.ABOUT_ME' | translate }}</a>
+        <a href="#skills">{{ 'header.SKILLS' | translate }}</a>
+        <a href="#mywork">{{ 'header.MY_WORK' | translate }}</a>
         <a (click)="changeLanguage('de')">{{ 'header.LANGUAGE_DE'| translate }} </a>
-        
+
         <a (click)="changeLanguage('en')">{{ 'header.LANGUAGE_EN' | translate }}</a>
     </div>
+
+
+
+
+
+
+    <div id="responsive-menu" (click)="toggleMenu()">
+        <div id="hamburger-icon">
+            <img [src]="isMenuOpen ? '/assets/images/close-icon.png' : '/assets/images/burger menu.png'" alt="">
+        </div>
+    </div>
+
+
+    <div [ngClass]="isMenuActive()" id="hamburger-menu">
+
+        <a href="#letswork" (click)="closeMenu()">{{ 'header.ABOUT_ME' | translate }}</a>
+        <a href="#skills" (click)="closeMenu()">{{ 'header.SKILLS' | translate }}</a>
+        <a href="#mywork" (click)="closeMenu()">{{ 'header.MY_WORK' | translate }}</a>
+
+        <div id="translate-div">
+            <a (click)="changeLanguage('de')">{{ 'header.LANGUAGE_DE'| translate }} </a>
+            <a (click)="changeLanguage('en')">{{ 'header.LANGUAGE_EN' | translate }}</a>
+        </div>
+
+
+    </div>
+
+
 </header>

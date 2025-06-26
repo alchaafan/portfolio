@@ -25,13 +25,15 @@
             <div id="right-content">
                 <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
-                    <input [(ngModel)]="contactData.name" type="text" name="name" id="name" placeholder="{{'contact.NAME_PLACEHOLDER' | translate}}">
+                    <input [(ngModel)]="contactData.name" type="text" name="name" id="name"
+                        placeholder="{{'contact.NAME_PLACEHOLDER' | translate}}">
                     @if (formErrors.name) {
                     <p class="warning">{{formErrors.name}}</p>
                     }
 
                     <input [(ngModel)]="contactData.email" type="email" name="email" type="email" required=""
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="{{'contact.EMAIL_PLACEHOLDER' | translate}}">
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        placeholder="{{'contact.EMAIL_PLACEHOLDER' | translate}}">
                     @if (formErrors.email) {
                     <p class="warning">{{formErrors.email}}</p>
                     }
@@ -46,17 +48,21 @@
                     <div id="checkbox">
                         <input type="checkbox" name="privacy" [(ngModel)]="contactData.privacy">
 
-                        <label> {{'contact.PRIVACY_READ' | translate}} <a routerLink="/privacy" class="privacy-link">{{'contact.PRIVACY_POLICY' | translate}}</a> {{'contact.PRIVACY_AGREE' | translate}} </label>
+                        <label> {{'contact.PRIVACY_READ' | translate}} <a routerLink="/privacy"
+                                class="privacy-link">{{'contact.PRIVACY_POLICY' | translate}}</a>
+                            {{'contact.PRIVACY_AGREE' | translate}} </label>
 
                     </div>
                     @if(formErrors.privacy) {
                     <p class="warning">{{formErrors.privacy}}</p>
                     }
 
-                    <button type="submit" id="send-button" [disabled]="!isFormValid()">{{'contact.BUTTON_TEXT' | translate}}</button>
+                    <button type="submit" id="send-button" [disabled]="!isFormValid()">{{'contact.BUTTON_TEXT' |
+                        translate}}</button>
 
-                    <a href="me"> <img id="arrow-top" src="/assets/images/arrow-top.png" alt=""></a>
+
                 </form>
+                <a href="#me"> <img id="arrow-top" src="/assets/images/arrow-top.png" alt=""></a>
             </div>
 
         </div>
