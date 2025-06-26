@@ -2,19 +2,46 @@ section {
   height: calc(100vh - 100px);
   width: 100%;
   color: #5988ff;
-  background: url("/assets/images/Ellipse 3.png");
+  background: url("/assets/images/Ellipse 9.png");
+  background-size: 1100px, 100%;
+  background-position: -40% 80%;
   background-repeat: no-repeat;
   max-height: 1440px;
   overflow: hidden;
   display: flex;
   font-family: "Baloo 2";
   background-color: rgb(237, 242, 255);
-  
+
+  @media (max-width: 1700px) {
+    background-position: center;
+  }
+
+  #content {
+    margin-left: 0%;
+    margin-right: 8%;
+    margin-top: 3%;
+    max-width: 1920px;
+    max-height: 1440px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    @media (max-width: 1500px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
 
   img {
     width: 750px;
     height: 1000px;
     object-fit: contain;
+
+    @media (max-width: 1500px) {
+      width: 500px;
+    }
+
+   
   }
 
   #left-content {
@@ -29,12 +56,28 @@ section {
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 50%;
+   @media(max-width:1700px) {
+    position: relative;
+    margin-top: 30%;
+   }
 
-    
-    #hallo{
+   
+
+    #hallo {
       font-family: Montserrat;
       font-size: 40px;
+
+      @media (max-width: 1700px) {
+        color: white;
+        font-size: 30px;
+        
+      }
+
+      @media (max-width: 380px) {
+        color: white;
+        font-size: 20px;
+        
+      }
     }
 
     #scroll {
@@ -42,28 +85,41 @@ section {
       font-size: 30px;
       margin-top: 60px;
       animation: pulsate 0.5s infinite alternate;
+
       @keyframes pulsate {
         0% {
-          font-size: 30px; 
+          font-size: 30px;
         }
         100% {
           font-size: 35px;
         }
       }
-    
+
+      @media (max-width: 1500px) {
+        display: none;
+      }
     }
     h1 {
       font-size: 60px;
       position: relative;
       margin: 0;
       line-height: 1;
+
+      @media (max-width: 1700px) {
+        color: white;
+        font-size: 30px;
+      }
     }
 
-      #scroll-line{
-        width: 2px;
-        height: 4000px;
-        background-color: #5988ff;
+    #scroll-line {
+      width: 2px;
+      height: 4000px;
+      background-color: #5988ff;
+
+      @media (max-width: 1500px) {
+        display: none;
       }
+    }
   }
   #frontend {
     display: flex;
@@ -72,6 +128,16 @@ section {
     gap: 0;
     #top {
       font-size: 80px;
+      @media (max-width: 1700px) {
+        color: white;
+        font-size: 30px;
+       
+      }
+    }
+
+    @media (max-width: 1700px) {
+      color: white;
+      font-size: 30px;
     }
   }
 
@@ -80,6 +146,9 @@ section {
     flex-direction: column;
     justify-content: flex-end;
     margin-right: 10%;
+    @media (max-width: 1510px) {
+      display: none;
+    }
 
     img {
       width: 40px;
