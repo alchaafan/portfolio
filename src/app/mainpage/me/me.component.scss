@@ -2,7 +2,7 @@ section {
   height: calc(100vh - 100px);
   width: 100%;
   color: #5988ff;
-  background: url("/assets/images/Ellipse 9.png");
+  background: url("./../../../../public/assets/images/Ellipse 9.png");
   background-size: 1100px, 100%;
   background-position: -40% 80%;
   background-repeat: no-repeat;
@@ -17,6 +17,7 @@ section {
   }
 
   #content {
+    position: relative;
     margin-left: 0%;
     margin-right: 8%;
     margin-top: 3%;
@@ -36,12 +37,12 @@ section {
     width: 750px;
     height: 1000px;
     object-fit: contain;
+    
 
     @media (max-width: 1500px) {
       width: 500px;
+      
     }
-
-   
   }
 
   #left-content {
@@ -56,12 +57,10 @@ section {
     flex-direction: column;
     align-items: center;
     position: relative;
-   @media(max-width:1000px) {
-    position: relative;
-    margin-top: 30%;
-   }
-
-   
+    @media (max-width: 1000px) {
+      position: relative;
+      margin-top: 30%;
+    }
 
     #hallo {
       font-family: Montserrat;
@@ -70,13 +69,11 @@ section {
       @media (max-width: 1700px) {
         color: white;
         font-size: 30px;
-        
       }
 
       @media (max-width: 380px) {
         color: white;
         font-size: 20px;
-        
       }
     }
 
@@ -93,6 +90,9 @@ section {
         100% {
           font-size: 35px;
         }
+      }
+      @media (max-width: 1900px) {
+        color: white;
       }
 
       @media (max-width: 1500px) {
@@ -115,10 +115,14 @@ section {
       width: 2px;
       height: 4000px;
       background-color: #5988ff;
+      @media (max-width: 1900px) {
+        color: white;
+      }
 
       @media (max-width: 1500px) {
         display: none;
       }
+      
     }
   }
   #frontend {
@@ -131,7 +135,6 @@ section {
       @media (max-width: 1700px) {
         color: white;
         font-size: 30px;
-       
       }
     }
 

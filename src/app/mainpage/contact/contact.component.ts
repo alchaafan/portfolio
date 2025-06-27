@@ -1,22 +1,31 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterLink} from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, RouterModule, TranslateModule],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    TranslateModule,
+    RouterLink,
+  ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
 
-   constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) {}
   changeLanguage(language: string) {
     this.translate.use(language);
   }
 
-  
+  http = inject(HttpClient);
+
   contactData = {
     name: '',
     email: '',
@@ -24,41 +33,42 @@ export class ContactComponent {
     privacy: false,
   };
 
-  formErrors = {
-    name: '',
-    email: '',
-    message: '',
-    privacy: '',
+  submitted: boolean = false;
+  feedbackMessage: boolean | string = false;
+
+  post = {
+    endpoint: 'https://muhammad-al-chaafan.developerakademie.net/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
   };
 
-  isFormValid(): boolean {
-    return (
-      !!this.contactData.name &&
-      !!this.contactData.email &&
-      !!this.contactData.message &&
-      this.contactData.privacy
-    );
-  }
+  onSumbit(NgForm: NgForm) {
+    this.submitted = true;
 
-  validateForm() {
-    this.formErrors = {
-      name: !this.contactData.name ? 'Please enter your name' : '',
-      email: !this.contactData.email ? 'Please enter your email' : '',
-      message: !this.contactData.message ? 'Please enter a message' : '',
-      privacy: !this.contactData.privacy
-        ? 'Please accept the privacy policy'
-        : '',
-    };
+    if (NgForm.submitted && NgForm.valid) {
+      this.http
+        .post(this.post.endpoint, this.post.body(this.contactData))
 
-    return Object.values(this.formErrors).every((error) => error === '');
-  }
-
-  onSubmit(ngForm: NgForm) {
-    const isValid = this.validateForm();
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
+        .subscribe({
+          next: (response) => {
+            setTimeout(() => {
+              NgForm.resetForm();
+            }, 3000);
+            this.feedbackMessage = true;
+            this.submitted = false;
+            setTimeout(() => {
+              this.feedbackMessage = false;
+            }, 3000);
+          },
+          error: (error) => {
+            this.feedbackMessage = 'error';
+          },
+        });
     }
   }
-
-  
 }

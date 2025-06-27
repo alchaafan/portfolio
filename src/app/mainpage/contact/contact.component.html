@@ -23,46 +23,54 @@
             </div>
 
             <div id="right-content">
-                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <form (ngSubmit)="onSumbit(contactForm)" #contactForm="ngForm">
+                    @if(submitted && (name.invalid || (name.touched && !name.valid))){<span class="warning">{{ 'contact.NAME_REQUIRED' |
+                        translate }}</span>}
 
-                    <input [(ngModel)]="contactData.name" type="text" name="name" id="name"
-                        placeholder="{{'contact.NAME_PLACEHOLDER' | translate}}">
-                    @if (formErrors.name) {
-                    <p class="warning">{{formErrors.name}}</p>
-                    }
+                    <input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" name="name" id="name"
+                        placeholder="{{'contact.NAME_PLACEHOLDER' | translate}}" required
+                        [ngClass]="{'invalid':(!name.valid && (name.touched || submitted))}">
 
-                    <input [(ngModel)]="contactData.email" type="email" name="email" type="email" required=""
+                    @if(submitted && (email.invalid || (email.touched && !email.valid))){<span class="warning">{{
+                        'contact.EMAIL_REQUIRED' |
+                        translate }}</span>}
+                    <input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email"
+                        placeholder="{{ 'contact.EMAIL_PLACEHOLDER' | translate }}" required
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                        placeholder="{{'contact.EMAIL_PLACEHOLDER' | translate}}">
-                    @if (formErrors.email) {
-                    <p class="warning">{{formErrors.email}}</p>
-                    }
+                        [ngClass]="{'invalid': (!email.valid && (email.touched || submitted))}">
 
-                    <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message" required
-                        minlength="5" placeholder="{{'contact.MESSAGE_PLACEHOLDER' | translate}}"></textarea>
-                    @if(formErrors.message) {
-                    <p class="warning">{{formErrors.message}}</p>
-                    }
+                    @if(submitted && (message.invalid || (message.touched && !message.valid))){<span class="warning">{{
+                        'contact.MESSAGE_EMPTY' | translate }}</span>}
+
+
+                    <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message"
+                        placeholder="{{ 'contact.MESSAGE_PLACEHOLDER' | translate }}" required minlength="5"
+                        [ngClass]="{'invalid': (!message.valid && (message.touched || submitted))}"></textarea>
+
+                        
+
 
 
                     <div id="checkbox">
-                        <input type="checkbox" name="privacy" [(ngModel)]="contactData.privacy">
-
-                        <label> {{'contact.PRIVACY_READ' | translate}} <a routerLink="/privacy"
-                                class="privacy-link">{{'contact.PRIVACY_POLICY' | translate}}</a>
-                            {{'contact.PRIVACY_AGREE' | translate}} </label>
+                       <input type="checkbox" [(ngModel)]="contactData.privacy" name="privacy" #privacy="ngModel"
+                        required [ngClass]="{'invalid': (!contactData.privacy)}" />
+                    <label for="privacy">
+                        {{ 'contact.PRIVACY_READ' | translate }}
+                        <a routerLink="/privacy-policy">{{ 'contact.PRIVACY_POLICY' | translate }}</a>
+                        {{ 'contact.PRIVACY_AGREE' | translate }}
+                    </label>
 
                     </div>
-                    @if(formErrors.privacy) {
-                    <p class="warning">{{formErrors.privacy}}</p>
-                    }
 
-                    <button type="submit" id="send-button" [disabled]="!isFormValid()">{{'contact.BUTTON_TEXT' |
+
+
+
+                    <button type="submit" id="send-button" [disabled]="submitted">{{'contact.BUTTON_TEXT' |
                         translate}}</button>
 
 
                 </form>
-                <a href="#me"> <img id="arrow-top" src="/assets/images/arrow-top.png" alt=""></a>
+                <a href="#me"> <img id="arrow-top" src="assets/images/arrow-top.png" alt=""></a>
             </div>
 
         </div>
