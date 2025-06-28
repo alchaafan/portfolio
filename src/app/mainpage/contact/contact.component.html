@@ -65,8 +65,7 @@
 
 
 
-                    <button type="submit" id="send-button" [disabled]="submitted">{{'contact.BUTTON_TEXT' |
-                        translate}}</button>
+                    <button type="submit" id="send-button" [disabled]="!contactForm.form.valid">{{'contact.BUTTON_TEXT' | translate}}</button>
 
 
                 </form>
