@@ -24,7 +24,8 @@
 
             <div id="right-content">
                 <form (ngSubmit)="onSumbit(contactForm)" #contactForm="ngForm">
-                    @if(submitted && (name.invalid || (name.touched && !name.valid))){<span class="warning">{{ 'contact.NAME_REQUIRED' |
+                    @if(submitted && (name.invalid || (name.touched && !name.valid))){<span class="warning">{{
+                        'contact.NAME_REQUIRED' |
                         translate }}</span>}
 
                     <input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" name="name" id="name"
@@ -47,30 +48,40 @@
                         placeholder="{{ 'contact.MESSAGE_PLACEHOLDER' | translate }}" required minlength="5"
                         [ngClass]="{'invalid': (!message.valid && (message.touched || submitted))}"></textarea>
 
-                        
+                    @if((privacy.touched || submitted) && !contactData.privacy) {
+                    <span class="accept-policy-warning-span">{{ 'CONTACT.ACCEPT_PRIVACY' | translate }}</span>
+                    }
 
 
 
                     <div id="checkbox">
-                       <input type="checkbox" [(ngModel)]="contactData.privacy" name="privacy" #privacy="ngModel"
-                        required [ngClass]="{'invalid': (!contactData.privacy)}" />
-                    <label for="privacy">
-                        {{ 'contact.PRIVACY_READ' | translate }}
-                        <a routerLink="/privacy">{{ 'contact.PRIVACY_POLICY' | translate }}</a>
-                        {{ 'contact.PRIVACY_AGREE' | translate }}
-                    </label>
+                        <input type="checkbox" [(ngModel)]="contactData.privacy" name="privacy" #privacy="ngModel"
+                            required [ngClass]="{'invalid': (!contactData.privacy)}" />
+                        <label for="privacy">
+                            {{ 'contact.PRIVACY_READ' | translate }}
+                            <a routerLink="/privacy">{{ 'contact.PRIVACY_POLICY' | translate }}</a>
+                            {{ 'contact.PRIVACY_AGREE' | translate }}
+                        </label>
 
                     </div>
 
 
 
 
-                    <button type="submit" id="send-button" [disabled]="!contactForm.form.valid">{{'contact.BUTTON_TEXT' | translate}}</button>
+                    <button type="submit" id="send-button" [disabled]="!contactForm.form.valid">{{'contact.BUTTON_TEXT'
+                        | translate}}</button>
 
 
                 </form>
                 <a href="#me"> <img id="arrow-top" src="assets/images/arrow-top.png" alt=""></a>
             </div>
+
+            @if(feedbackMessage) {
+            <div id="feedback-message">
+                <span> {{ 'contact.FEEDBACK_SUCCESS_THANK_YOU' | translate}} {{ contactData.name }}! {{
+                    'contact.FEEDBACK_SUCCESS_MESSAGE' | translate }}
+                </span>
+            </div>}
 
         </div>
     </div>

@@ -3,7 +3,6 @@ section {
   justify-content: center;
   width: 100%;
 
-
   .ellipse {
     position: absolute;
     background-size: contain;
@@ -16,7 +15,6 @@ section {
     width: 10%;
     aspect-ratio: 1/1;
     left: 30%;
-   
   }
 
   .ellipse6 {
@@ -25,7 +23,6 @@ section {
     aspect-ratio: 1/1;
     right: 10%;
     bottom: 5%;
-    
   }
 
   #content {
@@ -222,6 +219,7 @@ section {
             border-color: none;
           }
         }
+
         #arrow-top {
           margin-top: 50px;
           width: 30px;
@@ -234,6 +232,28 @@ section {
             transition: transform 0.2s ease;
             cursor: pointer;
           }
+        }
+      }
+
+      #feedback-message {
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        display: flex;
+        height: 30vh;
+        width: 100%;
+        z-index: 1000;
+        background: linear-gradient(to right, #0043f0, #5988ff);
+        text-align: center;
+
+        span {
+          color: white;
+          font-family: "Montserrat";
+          font-size: 26px;
+          margin-left: 2%;
+          margin-right: 2%;
         }
       }
     }

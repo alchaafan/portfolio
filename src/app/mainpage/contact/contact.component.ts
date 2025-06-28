@@ -37,7 +37,7 @@ export class ContactComponent {
   feedbackMessage: boolean | string = false;
 
   post = {
-    endpoint: 'https://muhammad-al-chaafan.developerakademie.net/sendMail.php',
+    endpoint: 'https://muhammad-alchaafan.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -51,8 +51,7 @@ export class ContactComponent {
     this.submitted = true;
 
     if (NgForm.submitted && NgForm.valid) {
-      this.http
-        .post(this.post.endpoint, this.post.body(this.contactData))
+      this.http.post(this.post.endpoint, this.post.body(this.contactData))
 
         .subscribe({
           next: (response) => {
