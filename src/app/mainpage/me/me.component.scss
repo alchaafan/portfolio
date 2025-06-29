@@ -2,6 +2,8 @@ section {
   height: calc(100vh - 100px);
   width: 100%;
   color: #5988ff;
+  display: flex;
+  justify-content: center;
   background: url("./../../../../public/assets/images/Ellipse 9.png");
  background-size:  50%;;
   background-position: -40%;
@@ -27,6 +29,7 @@ section {
     display: flex;
     justify-content: center;
     width: 100%;
+   
 
     @media (max-width: 1000px) {
       display: flex;
@@ -45,6 +48,12 @@ section {
       width: 500px;
      
     }
+
+    @media(min-width: 1800px) {
+      height: 138vh;
+    }
+    
+    
   }
 
   #left-content {
