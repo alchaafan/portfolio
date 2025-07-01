@@ -4,22 +4,28 @@ section {
   color: #5988ff;
   display: flex;
   justify-content: center;
-  background: url("./../../../../public/assets/images/Ellipse 9.png");
- background-size:  50%;;
-  background-position: -40%;
-  background-repeat: no-repeat;
+
   overflow: hidden;
   display: flex;
   font-family: "Baloo 2";
   background-color: rgb(237, 242, 255);
 
   @media (max-width: 1000px) {
-   
     background-position: top;
     background-size: 100%;
   }
 
   #content {
+    background: url("./../../../../public/assets/images/Ellipse 9.png");
+    background-size: 50%;
+    background-position: -40%;
+    background-repeat: no-repeat;
+
+    @media (max-width: 1000px) {
+      background-size: 600px;
+      background-position: top;
+    }
+
     position: relative;
     margin-left: 0%;
     margin-right: 8%;
@@ -29,33 +35,52 @@ section {
     display: flex;
     justify-content: center;
     width: 100%;
-   
-   
 
     @media (max-width: 1000px) {
       display: flex;
       flex-direction: column-reverse;
+      margin: 0%;
     }
+
+    
   }
 
   img {
     width: 750px;
     height: 1000px;
     object-fit: contain;
-    
-    
 
     @media (max-width: 1000px) {
-      position: absolute;
-      width: 500px;
+      
+      object-fit: cover;
+      width: 700px;
+     
      
     }
 
-    @media(min-width: 1800px) {
+     @media (max-width: 670px) {
+      
+      object-fit: contain;
+      width: 600px;
+    }
+
+     @media (max-width: 530px) {
+      position: absolute;
+      object-fit: contain;
+      width: 400px;
+    }
+
+     @media (max-width: 350px) {
+      position: absolute;
+      object-fit: contain;
+      width: 370px;
+      left: 0px;
+      top: 9%;
+    }
+
+    @media (min-width: 1800px) {
       height: 138vh;
     }
-    
-    
   }
 
   #left-content {
@@ -78,10 +103,8 @@ section {
     #hallo {
       font-family: Montserrat;
       font-size: 40px;
-    
 
-       @media (max-width: 1100px) {
-        
+      @media (max-width: 1100px) {
         font-size: 30px;
       }
 
@@ -111,10 +134,9 @@ section {
         }
       }
 
-      @media(max-width:1000px) {
+      @media (max-width: 1000px) {
         display: none;
       }
-     
     }
     h1 {
       font-size: 60px;
@@ -124,7 +146,7 @@ section {
 
       @media (max-width: 1000px) {
         color: white;
-        font-size: 30px;
+        font-size: 50px;
       }
     }
 
@@ -132,12 +154,10 @@ section {
       width: 2px;
       height: 4000px;
       background-color: #5988ff;
-     
 
       @media (max-width: 1000px) {
         display: none;
       }
-      
     }
   }
   #frontend {
@@ -149,7 +169,7 @@ section {
       font-size: 80px;
       @media (max-width: 1000px) {
         color: white;
-        font-size: 30px;
+        font-size: 50px;
       }
     }
 

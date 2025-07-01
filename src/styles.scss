@@ -1,69 +1,65 @@
-
 * {
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    position: relative;
-    
-}
-
-::-webkit-scrollbar {
-  display: none;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  position: relative;
 }
 
 html {
   height: 100%;
-  overflow: hidden;
 }
 
 body {
   height: 100vh;
-  overflow-y: auto; 
-  overflow-x: hidden; 
+  overflow-y: auto;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-
-
-
-
 @font-face {
-  font-display: swap; 
-  font-family: 'Baloo 2';
+  font-display: swap;
+  font-family: "Baloo 2";
   font-style: normal;
   font-weight: 400;
- src: url('./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2') format('woff2'); 
+  src: url("./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-display: swap; 
-  font-family: 'Baloo 2';
+  font-display: swap;
+  font-family: "Baloo 2";
   font-style: normal;
   font-weight: 500;
- src: url('./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2') format('woff2');
+  src: url("./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-display: swap; 
-  font-family: 'Baloo 2';
+  font-display: swap;
+  font-family: "Baloo 2";
   font-style: normal;
   font-weight: 600;
- src: url('./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2') format('woff2');
+  src: url("./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-display: swap; 
-  font-family: 'Baloo 2';
+  font-display: swap;
+  font-family: "Baloo 2";
   font-style: normal;
   font-weight: 800;
-  src: url('./../../portfolio/public/assets/fonts/baloo-2-v22-latin-800.woff2') format('woff2');
+  src: url("./../../portfolio/public/assets/fonts/baloo-2-v22-latin-800.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-display: swap; 
-  font-family: 'Montserrat';
+  font-display: swap;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url('./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2') format('woff2');
+  src: url("./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2")
+    format("woff2");
 }
