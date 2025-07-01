@@ -9,5 +9,5 @@ export const routes: Routes = [
     {path: '', component: MainpageComponent},
     {path: 'impressum', component: ImpressumComponent},
     {path: 'privacy', component: PrivacyComponent},
-    {path: '**',redirectTo: ''}
+    
 ];

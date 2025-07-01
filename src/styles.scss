@@ -7,6 +7,10 @@
     
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   height: 100%;
   overflow: hidden;
@@ -53,7 +57,7 @@ body {
   font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 800;
-  src: url('./../../portfolio/public/assets/fonts/baloo-2-v22-latin-regular.woff2') format('woff2');
+  src: url('./../../portfolio/public/assets/fonts/baloo-2-v22-latin-800.woff2') format('woff2');
 }
 
 @font-face {

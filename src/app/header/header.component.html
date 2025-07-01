@@ -4,12 +4,21 @@
             <a href="/"> <img src="assets/images/logo.png" alt=""></a>
         </div>
         <div id="navBar">
-            <a href="#letswork">{{ 'header.ABOUT_ME' | translate }}</a>
-            <a href="#skills">{{ 'header.SKILLS' | translate }}</a>
-            <a href="#mywork">{{ 'header.MY_WORK' | translate }}</a>
-            <a (click)="changeLanguage('de')">{{ 'header.LANGUAGE_DE'| translate }} </a>
+            <a href="#letswork" [class.active-section]="activeSection === 'letswork'">
+                {{ 'header.ABOUT_ME' | translate }}
+            </a>
 
-            <a (click)="changeLanguage('en')">{{ 'header.LANGUAGE_EN' | translate }}</a>
+            <a href="#skills" [class.active-section]="activeSection === 'skills'">
+                {{ 'header.SKILLS' | translate }}
+            </a>
+            <a href="#mywork" [class.active-section]="activeSection === 'mywork'">
+                {{ 'header.MY_WORK' | translate }}
+            </a>
+            <a (click)="changeLanguage('de')" [class.active-language]="isCurrentLanguage('de')">{{ 'header.LANGUAGE_DE'|
+                translate }} </a>
+
+            <a (click)="changeLanguage('en')" [class.active-language]="isCurrentLanguage('en')">{{ 'header.LANGUAGE_EN'
+                | translate }}</a>
         </div>
 
 
@@ -31,8 +40,10 @@
             <a href="#mywork" (click)="closeMenu()">{{ 'header.MY_WORK' | translate }}</a>
 
             <div id="translate-div">
-                <a (click)="changeLanguage('de')">{{ 'header.LANGUAGE_DE'| translate }} </a>
-                <a (click)="changeLanguage('en')">{{ 'header.LANGUAGE_EN' | translate }}</a>
+                <a (click)="changeLanguage('de')" [class.active-language]="isCurrentLanguage('de')">{{
+                    'header.LANGUAGE_DE'| translate }} </a>
+                <a (click)="changeLanguage('en')" [class.active-language]="isCurrentLanguage('en')">{{
+                    'header.LANGUAGE_EN' | translate }}</a>
             </div>
 
 

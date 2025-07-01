@@ -1,5 +1,6 @@
 <section id="contact">
 
+
     <div class="ellipse ellipse5"></div>
     <div class="ellipse ellipse6"></div>
 
@@ -48,9 +49,7 @@
                         placeholder="{{ 'contact.MESSAGE_PLACEHOLDER' | translate }}" required minlength="5"
                         [ngClass]="{'invalid': (!message.valid && (message.touched || submitted))}"></textarea>
 
-                    @if((privacy.touched || submitted) && !contactData.privacy) {
-                    <span class="accept-policy-warning-span">{{ 'CONTACT.ACCEPT_PRIVACY' | translate }}</span>
-                    }
+                   
 
 
 
@@ -65,23 +64,23 @@
 
                     </div>
 
+                    @if((privacy.touched || submitted) && !contactData.privacy) {
+                    <span class="warning">
+                        {{ 'contact.ACCEPT_PRIVACY' | translate }}
+                    </span>
+                    }
 
 
-
-                    <button type="submit" id="send-button" [disabled]="!contactForm.form.valid">{{'contact.BUTTON_TEXT'
-                        | translate}}</button>
+                    <button type="submit" id="send-button" [ngClass]="{'disabled-button': !contactForm.form.valid}">
+                        {{'contact.BUTTON_TEXT' | translate}}
+                    </button>
 
 
                 </form>
                 <a href="#me"> <img id="arrow-top" src="assets/images/arrow-top.png" alt=""></a>
             </div>
 
-            @if(feedbackMessage) {
-            <div id="feedback-message">
-                <span> {{ 'contact.FEEDBACK_SUCCESS_THANK_YOU' | translate}} {{ contactData.name }}! {{
-                    'contact.FEEDBACK_SUCCESS_MESSAGE' | translate }}
-                </span>
-            </div>}
+
 
         </div>
     </div>

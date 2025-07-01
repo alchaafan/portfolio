@@ -16,15 +16,15 @@ section {
 
   .ellipse5 {
     background-image: url("./../../../../public/assets/images/blue1.png");
-    width: 10%;
+    width: 5%;
     aspect-ratio: 1/1;
     top: 0%;
-    left: 30%;
+    left: 40%;
   }
 
   .ellipse6 {
     background-image: url("./../../../../public/assets/images/blue2.png");
-    width: 5%;
+    width: 10%;
     aspect-ratio: 1/1;
     bottom: 50%;
     right: 10%;
@@ -243,12 +243,15 @@ section {
 
           @media (max-width: 1400px) {
             width: 500px;
+            height: auto;
           }
           @media (max-width: 1100px) {
             width: 400px;
+            height: auto;
           }
           @media (max-width: 600px) {
             width: 250px;
+            height: auto;
           }
         }
         &:hover {
@@ -403,12 +406,15 @@ section {
 
           @media (max-width: 1400px) {
             width: 500px;
+            height: auto;
           }
           @media (max-width: 1100px) {
             width: 400px;
+            height: auto;
           }
           @media (max-width: 600px) {
             width: 250px;
+            height: auto;
           }
         }
         &:hover {

@@ -22,6 +22,19 @@ header {
     align-items: center;
 
     #navBar {
+      a.active-language {
+        &::after {
+          width: 100%;
+          background: #5988ff ;
+        }
+      }
+      a.active-section {
+        &::after {
+          width: 100% ;
+          background: #5988ff ;
+        }
+      }
+
       margin-right: 8%;
 
       a {
@@ -144,5 +157,9 @@ header {
     #hamburger-menu {
       padding: 0px;
     }
+  }
+
+  @media(max-width:880px) {
+    position: relative;
   }
 }

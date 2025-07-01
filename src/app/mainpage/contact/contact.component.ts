@@ -2,23 +2,17 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink} from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    TranslateModule,
-    RouterLink,
-  ],
+  imports: [CommonModule, FormsModule, TranslateModule, RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-
   constructor(private translate: TranslateService) {}
   changeLanguage(language: string) {
     this.translate.use(language);
@@ -47,27 +41,21 @@ export class ContactComponent {
     },
   };
 
-  onSumbit(NgForm: NgForm) {
-    this.submitted = true;
+ onSumbit(NgForm: NgForm) {
+  // Immer submitted auf true setzen, unabhängig von Validität
+  this.submitted = true;
 
-    if (NgForm.submitted && NgForm.valid) {
-      this.http.post(this.post.endpoint, this.post.body(this.contactData))
-
-        .subscribe({
-          next: (response) => {
-            setTimeout(() => {
-              NgForm.resetForm();
-            }, 3000);
-            this.feedbackMessage = true;
-            this.submitted = false;
-            setTimeout(() => {
-              this.feedbackMessage = false;
-            }, 3000);
-          },
-          error: (error) => {
-            this.feedbackMessage = 'error';
-          },
-        });
-    }
+  // Nur abschicken wenn Formular gültig
+  if (NgForm.valid) {
+    this.http.post(this.post.endpoint, this.post.body(this.contactData))
+      .subscribe({
+        next: (response) => {
+          // ... Erfolgslogik ...
+        },
+        error: (error) => {
+          this.feedbackMessage = 'error';
+        }
+      });
+  }
   }
 }
