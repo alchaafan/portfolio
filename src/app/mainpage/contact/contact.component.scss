@@ -15,6 +15,12 @@ section {
     width: 10%;
     aspect-ratio: 1/1;
     left: 30%;
+
+    @media (max-width: 800px) {
+      left: 40%;
+      top: 50%;
+      width: 100px;
+    }
   }
 
   .ellipse6 {
@@ -23,6 +29,10 @@ section {
     aspect-ratio: 1/1;
     right: 2%;
     bottom: 0%;
+    @media (max-width: 800px) {
+
+      width: 50px;
+    }
   }
 
   #content {
