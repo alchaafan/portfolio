@@ -5,6 +5,7 @@ section {
   display: flex;
   justify-content: center;
   font-family: "Baloo 2";
+ 
 
   .ellipse {
     position: absolute;
@@ -21,8 +22,10 @@ section {
     left: 50%;
     transform: translateX(-50%);
 
-    @media(max-width:1000px) {
-      display: none;
+    @media(max-width:700px) {
+      width: 150px;
+      top: -10%;
+      
     }
   }
 
@@ -33,9 +36,16 @@ section {
     bottom: 60%;
     right: 20%;
 
-    @media (max-width: 1480px) {
-      top: 10px;
+     @media (max-width: 1500px) {
+      top: 50px;
       right: 10px;
+      width: 70px;
+    }
+
+    @media (max-width: 420px) {
+      top: 30px;
+      right: 10px;
+      width: 50px;
     }
   }
 
@@ -71,6 +81,7 @@ section {
 
         @media (max-width: 1200px) {
           font-size: 50px;
+          margin-top: 80px;;
         }
       }
     }
