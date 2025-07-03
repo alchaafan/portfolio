@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, withInMemoryScrolling } from '@angular/router'; // withInMemoryScrolling hinzufügen
+import { provideRouter } from '@angular/router';
 
 import { provideHttpClient } from '@angular/common/http';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
@@ -16,13 +16,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(
-      routes,
-      withInMemoryScrolling({ // Scroll-Konfiguration hinzufügen
-        scrollPositionRestoration: 'disabled', // Automatisches Scrollen deaktivieren
-        anchorScrolling: 'enabled',
-      })
-    ),
+    provideRouter(routes),
     provideTranslateService({
       loader: {
         provide: TranslateLoader,

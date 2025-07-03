@@ -41,21 +41,31 @@ export class ContactComponent {
     },
   };
 
- onSumbit(NgForm: NgForm) {
-  // Immer submitted auf true setzen, unabhängig von Validität
-  this.submitted = true;
+  onSumbit(NgForm: NgForm) {
+    this.submitted = true;
 
-  // Nur abschicken wenn Formular gültig
-  if (NgForm.valid) {
-    this.http.post(this.post.endpoint, this.post.body(this.contactData))
-      .subscribe({
-        next: (response) => {
-          // ... Erfolgslogik ...
-        },
-        error: (error) => {
-          this.feedbackMessage = 'error';
-        }
-      });
-  }
+    if (NgForm.submitted && NgForm.valid) {
+      this.http
+        .post(this.post.endpoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            this.feedbackMessage = true;
+            this.submitted = false;
+
+            // Kombiniere beide Aktionen in einem Timeout
+            setTimeout(() => {
+              NgForm.resetForm();
+              this.feedbackMessage = false; 
+            }, 3000);
+          },
+          error: (error) => {
+            this.feedbackMessage = 'error';
+          
+            setTimeout(() => {
+              this.feedbackMessage = false;
+            }, 3000);
+          },
+        });
+    }
   }
 }
