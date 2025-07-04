@@ -17,33 +17,54 @@ export class HeaderComponent {
   ) {
     window.addEventListener('scroll', () => this.detectActiveSection());
   }
-  detectActiveSection(): any {
-    throw new Error('Method not implemented.');
-  }
+ detectActiveSection(): void {
+  window.addEventListener('scroll', () => {
+    const sectionIds = ['letswork', 'skills', 'mywork'];
+    let currentSection = '';
 
-  ngAfterViewInit() {
-  const sections = ['letswork', 'skills', 'mywork'];
-  const headerHeight = document.querySelector('header')?.offsetHeight || 100;
+    for (let i = 0; i < sectionIds.length; i++) {
+      const section = document.getElementById(sectionIds[i]);
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.activeSection = entry.target.id;
+      if (section) {
+        const rect = section.getBoundingClientRect();
+
+        
+        if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= 0) {
+          currentSection = sectionIds[i];
         }
-      });
-    },
-    {
-      rootMargin: `-${headerHeight}px 0px -30% 0px`, 
-      threshold: 0.1,
+      }
     }
-  );
 
-  sections.forEach((section) => {
-    const element = document.getElementById(section);
-    if (element) observer.observe(element);
+    if (currentSection) {
+      this.activeSection = currentSection;
+    }
   });
 }
+
+
+  ngAfterViewInit() {
+    const sections = ['letswork', 'skills', 'mywork'];
+    const headerHeight = document.querySelector('header')?.offsetHeight || 100;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.activeSection = entry.target.id;
+          }
+        });
+      },
+      {
+        rootMargin: `-${headerHeight}px 0px -30% 0px`,
+        threshold: 0.1,
+      }
+    );
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) observer.observe(element);
+    });
+  }
   changeLanguage(language: string) {
     this.translate.use(language);
   }
@@ -75,7 +96,7 @@ export class HeaderComponent {
     return this.translate.currentLang === lang;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.detectActiveSection();
   }
 }
