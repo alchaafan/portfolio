@@ -17,30 +17,38 @@ export class HeaderComponent {
   ) {
     window.addEventListener('scroll', () => this.detectActiveSection());
   }
- detectActiveSection(): void {
-  window.addEventListener('scroll', () => {
+  detectActiveSection(): void {
     const sectionIds = ['letswork', 'skills', 'mywork'];
-    let currentSection = '';
+    let ticking = false;
 
-    for (let i = 0; i < sectionIds.length; i++) {
-      const section = document.getElementById(sectionIds[i]);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let currentSection = '';
 
-      if (section) {
-        const rect = section.getBoundingClientRect();
+          for (let i = 0; i < sectionIds.length; i++) {
+            const section = document.getElementById(sectionIds[i]);
+            if (section) {
+              const rect = section.getBoundingClientRect();
+              if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= 0) {
+                currentSection = sectionIds[i];
+              }
+            }
+          }
 
-        
-        if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= 0) {
-          currentSection = sectionIds[i];
-        }
+          if (currentSection) {
+            this.activeSection = currentSection;
+          }
+
+          ticking = false;
+        });
+
+        ticking = true;
       }
-    }
+    };
 
-    if (currentSection) {
-      this.activeSection = currentSection;
-    }
-  });
-}
-
+    window.addEventListener('scroll', onScroll);
+  }
 
   ngAfterViewInit() {
     const sections = ['letswork', 'skills', 'mywork'];
