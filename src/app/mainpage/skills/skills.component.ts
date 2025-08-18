@@ -4,22 +4,19 @@ import { Component } from '@angular/core';
   selector: 'app-skills',
   imports: [],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+  styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
-
   skills = [
-    'assets/images/Frame 6.png',
-    'assets/images/Frame 7.png',
-    'assets/images/Frame 8.png',
-    'assets/images/Frame 9.png',
-    'assets/images/Frame 10.png',
-    'assets/images/Frame 11.png',
-    'assets/images/Frame 12.png',
-    'assets/images/Frame 13.png',
-    'assets/images/Frame 18.png',
-    'assets/images/Icon + Name s2.png'
-
+    { name: 'Angular', icon: 'assets/images/angular-icon.png' },
+    { name: 'TypeScript', icon: 'assets/images/typescript-icon.png' },
+    { name: 'JavaScript', icon: 'assets/images/javascript-icon.png' },
+    { name: 'HTML', icon: 'assets/images/html-icon.png' },
+    { name: 'Scrum', icon: 'assets/images/scrum-icon.png' },
+    { name: 'Firebase', icon: 'assets/images/firebase-icon.png' },
+    { name: 'Git', icon: 'assets/images/git-icon.png' },
+    { name: 'CSS', icon: 'assets/images/css-icon.png' },
+    { name: 'Rest API', icon: 'assets/images/api-icon.png' },
+    { name: 'Material Design', icon: 'assets/images/material-design-icon.png' },
   ];
-
 }

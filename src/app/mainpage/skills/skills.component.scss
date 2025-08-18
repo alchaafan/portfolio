@@ -27,7 +27,7 @@ section {
       color: #fff;
       margin-bottom: 2%;
 
-      @media(max-width:900px) {
+      @media (max-width: 900px) {
         font-size: 50px;
       }
     }
@@ -37,21 +37,30 @@ section {
       flex-wrap: wrap;
       justify-content: center;
 
-       @media(max-width:900px) {
-            display: flex;
+      @media (max-width: 900px) {
+        display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        }
+      }
 
       .icons {
         width: 160px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         transition: transform 0.3s ease;
         img {
           height: auto;
+          max-height: 100%;
+          max-width: 100%;
+          width: auto;
           transition: inherit;
 
           @media (max-width: 900px) {
-            width: 60px;
+            max-width: 60px;
+            max-height: 60px;
           }
         }
         &:hover {
@@ -60,6 +69,11 @@ section {
 
         @media (max-width: 900px) {
           width: auto;
+          height: 80px;
+        }
+        span {
+          color: white;
+          font-family: "Montserrat";
         }
       }
     }

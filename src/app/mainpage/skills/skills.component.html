@@ -9,7 +9,8 @@
 
             @for (skill of skills; track $index) {
                 <div class="icons">
-                    <img [src]= "skill">
+                     <img [src]="skill.icon" [alt]="skill.name + ' icon'" />
+                       <span>{{ skill.name}}</span>
                 </div>
             }
 
