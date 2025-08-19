@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, NavigationStart, NavigationEnd } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact',
@@ -12,8 +13,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
-  constructor(private translate: TranslateService) {}
+export class ContactComponent implements OnInit, OnDestroy {
+  constructor(private translate: TranslateService, private router: Router) {}
+  
   changeLanguage(language: string) {
     this.translate.use(language);
   }
@@ -41,6 +43,8 @@ export class ContactComponent {
     },
   };
 
+  private navigationSubscription: any;
+
   onSumbit(NgForm: NgForm) {
     this.submitted = true;
 
@@ -52,20 +56,56 @@ export class ContactComponent {
             this.feedbackMessage = true;
             this.submitted = false;
 
-            // Kombiniere beide Aktionen in einem Timeout
             setTimeout(() => {
               NgForm.resetForm();
-              this.feedbackMessage = false; 
+              this.feedbackMessage = false;
             }, 3000);
           },
           error: (error) => {
             this.feedbackMessage = 'error';
-          
+
             setTimeout(() => {
               this.feedbackMessage = false;
             }, 3000);
           },
         });
+    }
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event: Event) {
+    sessionStorage.setItem('contactFormData', JSON.stringify(this.contactData));
+    sessionStorage.setItem('contactScrollPosition', window.pageYOffset.toString());
+  }
+
+  ngOnInit() {
+    const savedData = sessionStorage.getItem('contactFormData');
+    if (savedData) {
+      this.contactData = JSON.parse(savedData);
+    }
+
+    const savedScrollPosition = sessionStorage.getItem('contactScrollPosition');
+    if (savedScrollPosition) {
+      setTimeout(() => {
+        window.scrollTo(0, Number(savedScrollPosition));
+        sessionStorage.removeItem('contactScrollPosition');
+      }, 100);
+    }
+
+
+    this.navigationSubscription = this.router.events.pipe(
+      filter(event => event instanceof NavigationStart || event instanceof NavigationEnd)
+    ).subscribe(event => {
+      if (event instanceof NavigationStart) {
+        sessionStorage.setItem('contactFormData', JSON.stringify(this.contactData));
+        sessionStorage.setItem('contactScrollPosition', window.pageYOffset.toString());
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
     }
   }
 }
