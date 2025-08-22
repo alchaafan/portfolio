@@ -18,6 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideTranslateService({
+      defaultLanguage: localStorage.getItem('selectedLanguage') || 'en', // Standard-Sprache setzen
       loader: {
         provide: TranslateLoader,
         useFactory: httpLoaderFactory,

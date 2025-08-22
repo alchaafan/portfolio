@@ -8,7 +8,7 @@ import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-mainpage',
-  imports: [MeComponent, LetsworkComponent, SkillsComponent, MyworkComponent, ContactComponent, HeaderComponent],
+  imports: [MeComponent, LetsworkComponent, SkillsComponent, MyworkComponent, ContactComponent],
   templateUrl: './mainpage.component.html',
   styleUrl: './mainpage.component.scss'
 })

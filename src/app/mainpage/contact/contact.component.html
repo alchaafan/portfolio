@@ -35,7 +35,8 @@
                         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                         [ngClass]="{'invalid': (!email.valid && (email.touched || submitted))}">
 
-                    @if(message.invalid && message.touched){<span class="warning">{{ 'contact.MESSAGE_EMPTY' | translate }}</span>}
+                    @if(message.invalid && message.touched){<span class="warning">{{ 'contact.MESSAGE_EMPTY' | translate
+                        }}</span>}
 
 
                     <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message"
@@ -69,7 +70,9 @@
                     </button>
                 </form>
 
-                <a href="#me"> <img id="arrow-top" src="assets/images/arrow-top.png" alt=""></a>
+                <a href="#me" class="arrow-link">
+                    <img id="arrow-top" src="assets/images/arrow-top.png" alt="">
+                </a>
             </div>
 
             @if(feedbackMessage) {

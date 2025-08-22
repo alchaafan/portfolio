@@ -11,7 +11,7 @@
             <a href="#skills" [class.active-section]="activeSection === 'skills'">
                 {{ 'header.SKILLS' | translate }}
             </a>
-            <a href="#mywork" [class.active-section]="activeSection === 'mywork'">
+            <a href="#mywork" [class.active-section]="activeSection === 'mywork' && !isPrivacyPage">
                 {{ 'header.MY_WORK' | translate }}
             </a>
             <a (click)="changeLanguage('de')" [class.active-language]="isCurrentLanguage('de')">{{ 'header.LANGUAGE_DE'|

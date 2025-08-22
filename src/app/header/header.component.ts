@@ -1,6 +1,8 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Router, NavigationEnd } from '@angular/router'; 
+import { Subscription } from 'rxjs'; 
 
 @Component({
   selector: 'app-header',
@@ -9,14 +11,31 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy {
   activeSection: string = '';
+  isPrivacyPage = false; 
+  private routerSubscription: Subscription;
+
   constructor(
     private translate: TranslateService,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private router: Router 
   ) {
+    this.routerSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isPrivacyPage = event.url === '/privacy';
+      }
+    });
+    
     window.addEventListener('scroll', () => this.detectActiveSection());
   }
+
+  ngOnDestroy() {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
+
   detectActiveSection(): void {
     const sectionIds = ['letswork', 'skills', 'mywork'];
     let ticking = false;
@@ -73,6 +92,7 @@ export class HeaderComponent {
       if (element) observer.observe(element);
     });
   }
+  
   changeLanguage(language: string) {
     this.translate.use(language);
   }

@@ -1,5 +1,8 @@
 section {
-  height: calc(100vh - 200px);
+  height: calc(72vh);
+  overflow-y: hidden;
+  
+ 
 
   .ellipse {
     position: absolute;
@@ -33,7 +36,6 @@ section {
   padding-top: 100px;
 
   #content {
-    
     max-width: 1920px;
     display: flex;
     flex-direction: column;
